@@ -20,7 +20,7 @@ public class ResultExceptionHandler {
         // 从异常对象中拿到ObjectError对象
         ObjectError objectError = e.getBindingResult().getAllErrors().get(0);
         // 然后提取错误提示信息进行返回
-        return new Result().error(ResultCodeEnum.FAILED.getCode(), objectError.getDefaultMessage());
+        return new Result().error(ResultCodeEnum.BAD_REQUEST.getCode(), objectError.getDefaultMessage());
     }
 
     @ExceptionHandler(ResultException.class)

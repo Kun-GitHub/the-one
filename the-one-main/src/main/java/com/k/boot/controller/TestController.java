@@ -1,11 +1,15 @@
 
 package com.k.boot.controller;
 
+import com.k.boot.common.exception.ResultException;
 import com.k.boot.common.result.Result;
+import com.k.boot.common.result.ResultCodeEnum;
 import com.k.boot.common.validator.ValidatorUtil;
 import com.k.boot.entity.BaseEntity;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  *
@@ -20,14 +24,13 @@ public class TestController {
 
     @PostMapping("captcha")
     @ResponseBody
-    public Result captcha(@RequestBody BaseEntity baseEntity) {
+    public Result captcha(@Valid @RequestBody BaseEntity baseEntity) {
 
-//        throw new ResultException(ResultCode.PARAMS_ERROR,"3rwerqwer");
-        ValidatorUtil.validateEntity(baseEntity);
+        throw new ResultException(ResultCodeEnum.FAILED.getCode(),"3rwerqwer");
 
-        System.out.println(baseEntity.getSex());
+//        System.out.println(baseEntity.getSex());
 
-        return new Result();
+//        return new Result();
     }
 
 }

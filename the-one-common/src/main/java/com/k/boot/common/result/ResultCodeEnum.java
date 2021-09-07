@@ -23,7 +23,10 @@ import lombok.Getter;
 @Getter
 public enum ResultCodeEnum {
     SUCCESS(200, "请求成功"),
-    FAILED(500, "服务器内部错误，无法完成请求");
+    FAILED(500, "服务器内部错误，无法完成请求"),
+    BAD_REQUEST(400, "客户端请求的语法错误，服务器无法理解");
+
+
 
     private Integer code;
     private String message;

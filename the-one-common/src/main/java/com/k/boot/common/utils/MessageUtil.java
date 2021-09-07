@@ -13,16 +13,16 @@ import org.springframework.context.i18n.LocaleContextHolder;
  * @date 2021-04-20 20:28
  */
 public class MessageUtil {
-    private static MessageSource messageSource;
-    static {
-        messageSource = (MessageSource) SpringContextUtil.getBean("messageSource");
-    }
-
-    public static String getMessage(int code){
-        return getMessage(code, new String[0]);
-    }
-
-    public static String getMessage(int code, String... params){
-        return messageSource.getMessage(code+"", params, LocaleContextHolder.getLocale());
-    }
+//    private static MessageSource messageSource;
+//    static {
+//        messageSource = (MessageSource) SpringContextUtil.getBean("messageSource");
+//    }
+//
+//    public static String getMessage(int code){
+//        return getMessage(code, new String[0]);
+//    }
+//
+//    public static String getMessage(int code, String... params){
+//        return messageSource.getMessage(code+"", params, LocaleContextHolder.getLocale());
+//    }
 }

@@ -41,7 +41,7 @@ public class ResultControllerAdvice implements ResponseBodyAdvice<Object> {
                 // 将数据包装在Response里后，再转换为json字符串响应给前端
                 return objectMapper.writeValueAsString(new Result(data));
             } catch (JsonProcessingException e) {
-                throw new ResultException(ResultCodeEnum.FAILED.getCode());
+                throw new ResultException(ResultCodeEnum.FAILED.getCode(), "服务器内部错误，无法完成请求");
             }
         }
         // 这里统一包装

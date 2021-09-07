@@ -9,6 +9,7 @@ import lombok.Getter;
  * 3**	重定向，需要进一步的操作以完成请求
  * 4**	客户端错误，请求包含语法错误或无法完成请求
  * 5**	服务器错误，服务器在处理请求的过程中发生了错误
+ * 参考：https://www.runoob.com/http/http-status-codes.html
  *
  * 其他错误编码，由5位数字组成，前2位为模块编码，后3位为业务编码
  * <p>
@@ -21,8 +22,8 @@ import lombok.Getter;
  */
 @Getter
 public enum ResultCodeEnum {
-    SUCCESS(200, MessageUtil.getMessage(200)),
-    FAILED(500, MessageUtil.getMessage(500));
+    SUCCESS(200, "请求成功"),
+    FAILED(500, "服务器内部错误，无法完成请求");
 
     private Integer code;
     private String message;

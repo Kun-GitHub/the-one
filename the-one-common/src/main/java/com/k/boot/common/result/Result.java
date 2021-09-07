@@ -67,18 +67,6 @@ public class Result<T> implements Serializable{
         return code == 200;
     }
 
-    public Result<T> error(){
-        this.code = ResultCodeEnum.FAILED.getCode();
-        this.message = MessageUtil.getMessage(this.code);
-        return this;
-    }
-
-    public Result<T> error(Integer code){
-        this.code = code;
-        this.message = MessageUtil.getMessage(this.code);
-        return this;
-    }
-
     public Result<T> error(Integer code, String msg){
         this.code = code;
         this.message = msg;

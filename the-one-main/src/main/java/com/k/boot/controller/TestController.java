@@ -22,14 +22,10 @@ public class TestController {
     @ResponseBody
     public Result captcha(@RequestBody BaseEntity baseEntity) {
 
-//        if(bindingResult.hasErrors()){
-//            return new Result().error(bindingResult.getFieldError().getDefaultMessage());
-//        }
-
 //        throw new ResultException(ResultCode.PARAMS_ERROR,"3rwerqwer");
-//        ValidatorUtil.validateEntity(baseEntity);
+        ValidatorUtil.validateEntity(baseEntity);
 
-//        System.out.println(baseEntity.getSex());
+        System.out.println(baseEntity.getSex());
 
         return new Result();
     }

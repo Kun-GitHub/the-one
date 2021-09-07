@@ -21,31 +21,10 @@ public class ResultException extends RuntimeException {
     private String message = ResultCodeEnum.SUCCESS.getMessage();
     private Integer code = ResultCodeEnum.SUCCESS.getCode();
 
-    public ResultException(int code){
-        this.code = code;
-        this.message = MessageUtil.getMessage(code);
-    }
-
-    public ResultException(int code, String... params){
-        this.code = code;
-        this.message = MessageUtil.getMessage(code, params);
-    }
-
     public ResultException(int code, String msg) {
+        super();
         this.code = code;
         this.message = msg;
-    }
-
-    public ResultException(int code, Throwable e){
-        super(e);
-        this.code = code;
-        this.message = MessageUtil.getMessage(code);
-    }
-
-    public ResultException(int code, Throwable e, String... params){
-        super(e);
-        this.code = code;
-        this.message = MessageUtil.getMessage(code, params);
     }
 
     public ResultException(String msg){
@@ -59,7 +38,5 @@ public class ResultException extends RuntimeException {
         this.code = ResultCodeEnum.FAILED.getCode();
         this.message = msg;
     }
-
-
 
 }
